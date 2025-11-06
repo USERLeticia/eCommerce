@@ -68,15 +68,12 @@ body {
     color: #1F2937;
 }
 
-.second-nav {
-    padding: 20px 72px;
-}
-
 .navlinks {
     display: flex;
     justify-content: space-between;
     align-items: center;
     list-style: none;
+    padding: 20px 72px;
 
 }
 
@@ -204,24 +201,26 @@ img {
 }
 
 .highlights-area {
-    display: grid;
-    grid-template-columns: repeat (2, 1fr);
-    gap: 10px;
-    padding: 0 50px 10px 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 32px 72px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .first-highlight {
     display: grid;
     grid-template-columns: 40% 60%;
-    gap: 10px;
-    height: 300px;
+    gap: 24px;
+    min-height: 400px;
 }
 
 .second-highlight {
     display: grid;
     grid-template-columns: 60% 40%;
-    gap: 10px;
-    height: 300px;
+    gap: 24px;
+    min-height: 400px;
 }
 
 .exclusive-shoes {
@@ -293,4 +292,249 @@ img {
     font-size: 12px;
     margin: 2px 0;
     font-weight: 400;
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .navbar {
+        flex-direction: column;
+        padding: 14px 20px;
+        gap: 12px;
+    }
+
+    .search {
+        width: 100%;
+        justify-content: center;
+        margin: 10px 0;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .navlinks {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 20px;
+        gap: 15px;
+    }
+
+    .navlinks li {
+        margin: 5px 0;
+    }
+
+    .header {
+        flex-direction: column;
+        height: auto;
+        margin-bottom: 40px;
+    }
+
+    .text {
+        width: 100%;
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .box {
+        width: 85%;
+        margin: 30px auto;
+        padding: 20px;
+    }
+
+    .percentage, .arrivals {
+        font-size: 36px;
+        line-height: 1.2;
+    }
+
+    .image {
+        width: 100%;
+        height: 350px;
+    }
+
+    .circle {
+        width: 200px;
+        height: 200px;
+        margin: 40px auto;
+    }
+
+    img {
+        height: 300px;
+        width: auto;
+        margin-top: -15%;
+    }
+
+    .highlights-area {
+        padding: 20px 16px;
+        gap: 16px;
+    }
+
+    .first-highlight,
+    .second-highlight {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        min-height: auto;
+    }
+
+    .exclusive-shoes,
+    .exquisite-styles,
+    .new-arrivals,
+    .exclusive-items {
+        height: 280px;
+        background-position: center;
+        border-radius: 16px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .exclusive-shoes::before,
+    .exquisite-styles::before,
+    .new-arrivals::before,
+    .exclusive-items::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6));
+    }
+
+    .exclusive-shoes h2,
+    .exquisite-styles h2,
+    .exclusive-items h2,
+    .new-arrivals h2 {
+        font-size: 24px;
+        padding: 0 20px;
+        width: 100%;
+        z-index: 2;
+    }
+
+    .small-box {
+        background: rgba(0, 0, 0, 0.4);
+        padding: 16px;
+        width: calc(100% - 32px);
+        left: 16px;
+        bottom: 16px;
+        border-radius: 12px;
+        backdrop-filter: blur(8px);
+        z-index: 3;
+    }
+
+    .small-box h4 {
+        font-size: 12px;
+    }
+
+    .small-box h5 {
+        font-size: 10px;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+    .navbar {
+        padding: 20px 40px;
+    }
+
+    .menu {
+        width: 40%;
+    }
+
+    .navlinks {
+        padding: 15px 40px;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .navlinks li {
+        margin: 5px 10px;
+    }
+
+    .header {
+        flex-direction: row;
+        height: auto;
+        min-height: 600px;
+    }
+
+    .text {
+        width: 55%;
+        height: auto;
+    }
+
+    .box {
+        width: 80%;
+        margin: 60px auto;
+        padding: 30px;
+    }
+
+    .percentage, .arrivals {
+        font-size: 44px;
+    }
+
+    .image {
+        width: 45%;
+        height: auto;
+    }
+
+    .circle {
+        width: 250px;
+        height: 250px;
+        margin: 25% auto;
+    }
+
+    .highlights-area {
+        padding: 32px 40px;
+        gap: 24px;
+    }
+
+    .first-highlight,
+    .second-highlight {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+        min-height: auto;
+    }
+
+    .exclusive-shoes,
+    .exquisite-styles,
+    .new-arrivals,
+    .exclusive-items {
+        height: 320px;
+        background-position: center;
+        border-radius: 20px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .exclusive-shoes h2,
+    .exquisite-styles h2,
+    .exclusive-items h2,
+    .new-arrivals h2 {
+        font-size: 28px;
+    }
+
+    .small-box {
+        background: rgba(0, 0, 0, 0.4);
+        padding: 20px;
+        width: auto;
+        max-width: calc(100% - 64px);
+        left: 20px;
+        bottom: 20px;
+        border-radius: 12px;
+        backdrop-filter: blur(8px);
+    }
+
+    .small-box h4 {
+        font-size: 13px;
+    }
+
+    .small-box h5 {
+        font-size: 11px;
+    }
 }
